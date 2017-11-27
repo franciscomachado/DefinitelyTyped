@@ -3,6 +3,7 @@
 // Definitions by: Seth Westphal <https://github.com/westy92>
 //                 Kay Schecker <https://github.com/flynetworks>
 //                 Aakash Goenka <https://github.com/a-k-g>
+//                 Francisco Machado <https://github.com/franciscomachado>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 declare module "node-forge" {
@@ -294,5 +295,15 @@ declare module "node-forge" {
         namespace md5 {
             function create(): MessageDigest;
         }
+    }
+
+    namespace random {
+        function getBytesSync(count: number): Uint8Array;
+    }
+
+    namespace cipher {
+        type BlockCipher = any;
+
+        function createCipher(algorithm: string, key: Uint8Array): BlockCipher;
     }
 }
